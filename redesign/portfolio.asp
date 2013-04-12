@@ -299,7 +299,7 @@ MM_reloadPage(true);
                 <a href="http://march4orth.net">
                 <img src="../M4Images/GIF/march4orth_logo.png" alt="March 4orth Design">
                 </a>
-            </div>
+            </div> 
     
     
         <!-- 2.	HEADER  -->
