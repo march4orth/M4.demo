@@ -1,0 +1,1357 @@
+/* 2009 - 2010 (c) | ez-css.org
+ * ez.css ::  version 1.3 :: 03132010
+ *
+ * This style sheet caters for IE 5 browsers. 
+ * With this style sheet, use the snippets from http://www.ez-css.org/layouts 
+*/
+
+/*
+ * auto-centering in IE 5
+ * we reset this value in the next rule so content is left aligned. 
+ */
+ 
+ 
+ /*unwanted margins, padding, and borders with this basic bit of code to start off my CSS file.
+
+body, div, img, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dd, dt,
+blockquote, fieldset, legend, label, input, textarea {
+    margin: 0; padding: 0; border: 0;
+}*/
+
+
+html { font-size:100%; } 
+
+#mainBG {
+   /*background: url(../M4Images/backgrounds/sunset.jpg) no-repeat scroll;*/
+	background-position:center;
+	background-attachment:fixed;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	margin-bottom:100px; 
+	padding:0px;
+	width:100%;
+	height:100%;
+
+}
+
+#header {
+    background-color: #C00;
+	background-attachment:scroll;
+	background-image:url(../M4Images/backgrounds/m4-patternhead20c-thumb.png);
+	background-repeat:repeat;
+    color: #F9F9F9;
+    height: auto;
+    left: 0;
+    margin: auto;
+    padding: 0px;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    visibility: visible;
+    width: 100%;
+    z-index: 1;
+	border: #999 thin dotted;
+}
+
+
+div#mainBG.homeContent div.ez-wr div.ez-wr div#logo2.ez-box a img{
+	border:none;
+}
+
+#logo2 {
+	background-color: ;
+	border:none;
+	color: #777777;
+	height: auto; 
+	left: 10%;
+	margin: auto;
+	opacity: 0.9;
+	padding: 5px;
+	position: fixed;
+	text-align: center;
+	top: 5px;
+	visibility: visible;
+	width: 206px;
+	z-index: 3;
+	}
+
+
+.homeContent {
+   /* height: 100%;
+    width: 100%;*/
+    position: relative;
+    margin: 0 auto;
+}
+ 
+
+body {
+	 text-align: center;
+	/*background-image: url(../../M4Images/backgrounds/norwegian_rose1.png); 
+	background-image:url(../M4Images/backgrounds/sunset.jpg);
+	background-repeat: repeat;
+	background-attachment:fixed;*/
+	color:#FFF;
+	text-shadow: 1px 1px #666;	
+	font-family: Century Gothic;
+
+}
+
+
+img { max-width: 100%; height:auto;}
+
+
+a {
+	color:#FFF;
+	font-family:"Century Gothic";
+	font-size:0.6875em;
+	font-weight:bold;
+	text-decoration: none;
+}
+
+
+a:link{
+	color:#FFF;
+	font-family:"Century Gothic";
+	font-size:0.6875em;
+	font-weight:bold;
+	text-decoration: none;
+}
+
+a:visited {
+	color:#FFF;
+	font-family:"Century Gothic";
+	font-size:0.6875em;
+	font-weight:bold;
+	text-decoration: none;
+}
+
+a:hover{
+		color:#FFF;
+	font-family:"Century Gothic";
+	font-size:0.6875em;
+	font-weight:bold;
+	text-decoration:underline;
+	}
+
+a:active {
+	text-decoration: none;
+	color: #FFF;
+}
+
+
+
+/* 
+ * This wrapper, first child of body, is used to wrap "ez-css" modules. 
+ * It will auto-center if it is given a width smaller than the width of the viewport.
+ * Position relative is used to create a stacking context from the start (to prevent z-index issues). 
+ * overflow:hidden is used to create a block formatting context, but if you give this element a width you can replace this declaration with display:inline-block
+ */
+
+.ez-mw {
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	position :relative;
+	z-index: 1;
+	text-align: left;
+	overflow: hidden;
+}
+
+/*
+ * to make sure modules clear previous containers
+ */
+
+.ez-wr {clear: left;}
+
+/*
+ * this is the clearfix method
+ * we rely on this to contain floats in "stand-alone" modules 
+ */
+ 
+.ez-wr:after,
+.ez-box:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+}
+
+/*
+ * hacks for IE 5 (Win and Mac)
+ * (min-height is the "hasLayout" trigger used for IE7)
+ */
+ 
+.ez-wr,.ez-box,.ez-last {display: inline-block;min-height: 0;}    
+/* hides from IE-mac \*/  
+* html .ez-wr,
+* html .ez-box,
+* html .ez-last {height: 1%;}  
+.ez-wr,.ez-box,.ez-last {display: block;}  
+/* end hide from IE-mac */
+
+/*
+ * the last DIV in the HTML flow (a column) must create a new block formatting context.
+ * by default, we rely on "overflow:hidden", but if this creates an issue with your design, then try one of these classes instead: 
+ * ez-oa
+ * ez-dt 
+ * ez-it
+ * ez-tc
+ * ez-ib
+ */
+ 
+.ez-oh {
+	overflow: hidden;
+}
+
+* html .ez-oh {
+	overflow: visible;
+}
+
+.ez-oa {
+	overflow: auto;
+}
+.ez-dt {
+	display: table;
+}
+
+.ez-it {
+	display: inline-table;
+}
+.ez-tc {
+	display: table-cell;
+}
+
+.ez-ib {
+	display: inline-block;
+}
+
+/* 
+ * DIVs to be columns
+ * we float them left or right depending on module or layout
+ * the negative margin is used to fix a IE6 bug (3px jog).
+ */
+.ez-fl {
+	float: left;
+}
+
+* html .ez-fl {
+	margin-right: -3px;
+}
+
+.ez-fr {
+	float: right;
+}
+
+* html .ez-fr {
+	margin-left: -3px;
+}
+
+/*
+ * every floated column in a module or layout needs a width
+ * here we have 5 default values: 1/4, 1/3, 1/2, 2/3 and 3/4
+ */
+
+.ez-25 {width: 25%;}
+.ez-33 {width: 33.33%;}
+.ez-50 {width: 50%;}
+.ez-66 {width: 66.66%;}
+.ez-75 {width: 75%;}
+
+/* 
+ * the following classes are used to make columns that are siblings overlap by 1 pixel (to vertically align 1 pixel borders between containers)
+ * for this to work, this class must be applied to the following elements: 
+ * - column 1 of Module 2A, 
+ * - column 2 of Module 3A,
+ * - column 1 of Module 3B, 
+ * - column 3 of Module 4A, 
+ * - column 1 of Module 4B, 
+ * - column 1 in column 1 of Module 4B, 
+ * - column 2 in column 1 of Module 4B 
+ */
+ 
+.ez-negmr {
+	margin-right: -1px;
+}
+
+* html .ez-negmr {
+	margin-right:-4px;
+}
+
+/*
+ * (star html hack is used here because of the cascade, to override "* html .ez-fl")
+ * same as above, but for these elements:
+ * - column 1 of Module 3A,
+ * - column 1 of Module 4A,
+ * - column 2 of Module 4A 
+ */
+ 
+* html .ez-negmx,
+.ez-negmx {
+	margin-right: -1px;
+}
+
+/* 
+ * same as above, but for these elements:
+ * - column 1 of Module 2B,
+ * - column 2 of Module 3B 
+ */
+ 
+.ez-negml {
+	margin-left: -1px; 
+}
+
+* html .ez-negml {
+	margin-left:-4px;
+}
+
+
+
+
+/* SITE */
+
+}
+
+  
+.reflectBelow { 
+		-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(80%, transparent), to(white));
+ /* -webkit-box-reflect: below 0; 
+    -webkit-gradient: (linear, left top, left bottom, from(transparent), color-stop(0.81, transparent), to(white));*/
+}
+
+
+/*
+.shadow{
+	box-shadow: 4px 4px 2px #888;
+}
+*/
+
+.socialize{
+	height:50px;
+}
+
+.intro{
+	z-index:1000;
+	margin-top: 80px;
+	margin-bottom: 25px;
+}
+
+
+.intrologo{
+	border-right: #999 thin dotted; 
+	height:125px; 
+	padding: 5px; 
+	margin: 5px;
+}
+
+
+.introtextheader{
+	color: #F20000;
+	font-size:3.125em;
+	font-weight:900;
+	text-align:left;
+     /* font-family: 'ribbonregular';
+	   font-family: 'anudawregular'; anudawregular 
+	  
+	   
+	    font-family: 'grutchshadedregular'; */ 
+		font-family: 'neoretrodrawregular';
+
+}
+
+.introtext{ 
+	/*color:#333; */
+	color:#EEE;
+	font-size:0.6em; 
+	text-align:center;
+	text-shadow: 1px 1px #222;
+	font-weight:bold;
+}
+
+
+.clientspecsform
+{
+	margin:auto; 
+	padding:5px; 
+	width:75%; 
+	background-color:#C00; 
+	color:#FFF; 
+	font-size:1em; 
+	text-align:center;
+}
+
+
+	#clientspecsform
+	{
+	margin:auto; 
+	padding:5px; 
+	width:75%; 
+	background-color:#C00; 
+	color:#FFF; 
+	font-size:1em; 
+	text-align:center;
+	}
+	
+	a.clientspecsform:link 
+	{
+	padding:5px; 
+	width:75%; 
+	background-color:#C00; 
+	color:#FFF; 
+	font-size:1em; 
+	text-align:center;
+	font-weight:bold;
+	font-style:normal;
+		}      /* unvisited link */
+		
+	a.clientspecsform:visited 
+	{
+	padding:5px; 
+	width:75%; 
+	background-color:#C00; 
+	color:#FFF; 
+	font-size:1em; 
+	text-align:center;
+		}  /* visited link */
+	
+	a.clientspecsform:hover 
+	{
+	padding:5px; 
+	width:75%; 
+	background-color:#C00; 
+	color:#FFF; 
+	font-size:1em; 
+	text-align:center;
+		}  /* mouse over link */
+	
+	a.clientspecsform:active {
+	padding:5px; 
+	width:75%; 
+	background-color:#C00; 
+	color:#FFF; 
+	font-size:1em; 
+	text-align:center;
+		}  /* selected link */ 
+
+
+
+.datetime{
+	height:auto;
+	color:#FFF;
+	font-size:10px;
+	background-attachment: fixed;
+	background-color: #810007;
+	/*background-image: url(../M4Images/backgrounds/m4-patternhead20c-thumb.png);
+	background-repeat: repeat;
+	*/
+	text-align:center;
+	margin:0px;
+	padding-right:50px;
+	width:100%;
+}
+
+
+.splash{
+	height:215px;
+	padding: 15px;
+	background-color:#c00;
+	width:695px;
+	margin: 5px auto;
+	opacity:0.95;
+    filter:alpha(opacity=95); /* For IE8 and earlier */
+	background-attachment: fixed;
+	background-color: #c00000;
+	background-image: url(../M4Images/backgrounds/m4-patternhead20c-thumb.png);
+	background-repeat: repeat;
+}
+
+
+
+
+
+.m4tag{
+	height:40px;
+	color:#FFF;
+	font-size:1.5em;
+	text-shadow: 1px 1px #000;
+	/*background-color: #c00000;
+	background-image: url(../M4Images/backgrounds/m4-patternhead20c-thumb.png);
+	background-repeat: repeat;
+	background-attachment: fixed;
+	*/
+}
+
+
+.graphics{
+	border-right: #999 thin dotted; 
+	height:auto; 
+	padding: 5px;
+}
+
+
+.website
+{
+	border-right: #999 thin dotted; 
+	height:auto; 
+	padding: 5px;	
+}
+	
+
+.events
+{
+	border-right: 0px; 
+	height:auto; 
+	padding: 5px;
+}
+	
+	
+	
+.customerinfo
+{
+	height:175px; 
+	padding:10px;
+}
+
+
+.customerinfotext
+{
+	 text-align:center; 
+	 font-size:0.75em; 
+	 color:#FFF; 
+	 padding:10px;
+	 text-shadow: 1px 1px #000;
+	 font-weight:700;
+}
+
+
+.blog{
+	border: #999 thin dotted; 
+	padding:5px; 
+	margin:5px;
+}
+
+
+.m4info{
+	padding:10px;
+}
+
+
+
+
+
+.m4info_header
+{
+	font-size:1.125em; 
+	color:#333;
+}
+
+
+.m4info_text{
+	font-size:0.625em; 
+	color:#333; 
+	text-align:left;
+}
+
+
+.news{
+	 border: #999 thin dotted; 
+	 padding:5px; 
+	 margin:5px;
+}
+
+
+.footer{
+	height:55px;
+	color:#FFF;
+	font-size:0.6875em;
+	padding:5px;
+	border:0px;
+	background-attachment: fixed;
+	background-color: #c00000;
+	background-image: url(../M4Images/backgrounds/m4-patternhead20c-thumb.png);
+	background-repeat: repeat;
+}
+
+
+
+
+.main{
+	/*border:#999 thin dotted;  */
+	width:700px;
+	height:auto;
+	margin:auto; 
+	/*padding:10px; */
+	/*background: #F2D0A2; #F2D0A2; */
+	opacity:0.85;
+    filter:alpha(opacity=85); /* For IE8 and earlier */
+	}
+
+
+#main{
+	/*border:#999 thin dotted;  */
+	width:700px;
+	height:auto;
+	margin:auto; 
+	/*padding:10px; */
+	/*background: #F2D0A2; #F2D0A2; */
+	opacity:0.85;
+    filter:alpha(opacity=85); /* For IE8 and earlier */
+	}
+
+
+
+
+.customerinfo_header
+{
+	color:#FFF;
+	font-size:.95em;
+	text-shadow: 1px 1px #222;
+	    font-family: "Century Gothic";
+		font-weight:bold;
+	padding:5px;
+
+}
+
+
+
+
+
+.navbar
+{
+	/*border-bottom:#999 thin dotted; 
+	border-top:#999 thin dotted; */
+	height:auto; 
+	padding:5px;
+	margin-top:10px;
+	
+}
+
+
+
+
+
+#topnav ul
+{
+list-style-type:none;
+margin:auto;
+padding:15px;
+} 
+
+
+#topnav li
+{
+display:inline;
+padding:10px;
+margin-right:25px;
+}
+
+
+/*
+ul{
+list-style-type: disc;
+}
+*/
+
+	.rounded-corners {
+     -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+}
+
+
+	.rounded-corners {
+     -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+}
+
+	.transbox
+	  {
+	  margin:auto;
+	  background-color:#fbd4b4;
+	  border:0px solid #4A484C;
+	  opacity:0.82;
+	  filter:alpha(opacity=80); /* For IE8 and earlier */
+	  }
+
+
+	#topnav
+	{
+	width: 97%;
+	/*margin:20px auto 20px auto;
+	border: #C00 thin dashed;
+	padding:10px;
+	border: 0px;
+	color:#FC0;
+	font-size:27px;*/
+	}
+	
+	a.topnav:link 
+	{
+		font-size: 1em;
+		padding: 5px;
+		text-decoration: none;
+		font-weight:bold;
+		font-style:normal;
+		      color: #FC9; 
+		}/*unvisited link */
+		
+	a.topnav:visited 
+	{
+		font-size: 1em;
+		padding: 5px;
+		text-decoration: none;
+		font-weight:bold;
+		font-style:normal;
+		color: #FC9;
+		}  /*visited link */
+	
+	a.topnav:hover 
+	{
+		color: #FFF;
+		font-size: 1em; 
+		font-weight:bold; 
+		text-decoration:none;
+		background:#f20000;
+		border: 0px;
+		padding: 5px;
+		}  /* mouse over link */
+	
+	a.topnav:active {
+		color: #FFF;
+		font-size: 1em;
+		padding: 5px;
+		text-decoration: none;
+		}  /* selected link */ 
+	
+	
+	
+	
+#footertab {
+    background-color: #FFFF99;
+    border: 0px solid grey;
+    bottom: -20px;
+    /*color: #339900;*/
+    font-size: 12px;
+    height: 75px;
+    left: 0;
+    margin: auto;
+    opacity: 0.9;
+    padding: 5px;
+    position: fixed;
+    right: 0;
+    text-align: center;
+    visibility: visible;
+    width: 85%;
+    z-index: 0;
+}
+	
+	
+	.current
+	{
+		color: #FFF;
+		font-size: 1em; 
+		font-weight:bold; 
+		text-decoration:none;
+		background:#f20000;
+		padding: 5px;
+		}  /* selected link */ 
+
+
+	.clientlogin
+	{
+		font-size: 1em; 
+		font-weight:bold; 
+		text-decoration:none;
+		background:#FFF;
+		padding: 5px;
+		}  /* selected link */ 
+
+
+
+
+
+/* SPLASH SLIDESHOW */
+
+ul { 
+	list-style-type: none;
+	margin:auto;
+	padding:0px;
+}
+
+#slider1 {
+    width: 700px; /* important to be same as image width */
+    height: 215px; /* important to be same as image height */
+    position: relative; /* important */
+	overflow: visible; /* important */
+}
+
+#slider1Content {
+	width: 700px; /* important to be same as image width or wider */
+	position: absolute;
+	top: -2px;
+	margin-left: 0;
+	left: -3px;
+}
+.slider1Image {
+    float: left;
+    position: relative;
+	display: none;
+}
+.slider1Image span {
+    position: absolute;
+	font: 10px/15px Century Gothic;
+    padding: 5px 0px;
+    width: 100%;
+    background-color: #fff;
+    filter: alpha(opacity=75);
+    -moz-opacity: 0.75;
+	-khtml-opacity: 0.75;
+    opacity: 0.75;
+    color: #c00;
+    display: none;
+	text-shadow: 0px 0px;
+}
+.clear {
+	clear: both;
+}
+.slider1Image span strong {
+    font-size: 1em;
+	text-shadow: 0px 0px;
+	color:#c00;
+
+}
+.left {
+	top: 0;
+    left: 0;
+	width: 100% !important;
+	height: auto;
+}
+.right {
+	right: 0;
+	bottom: 0;
+	width: 90px !important;
+	height: 290px;
+}
+
+
+
+.contactform{
+	border: 0px thin dotted #999;
+	height:auto;
+	margin-top: 20px;
+	/*background-color:#CCC;
+	opacity:0.9;*/
+}
+
+
+.contact_header{
+	color:#FFF;
+	font-size:24px;
+	font-weight:bold;
+	line-height:55px;
+	padding:5px;
+	text-align:center;
+	/*background-color: #C00;
+	background-image: url(../M4Images/backgrounds/m4-patternhead20c-thumb.png);
+	background-attachment: fixed;
+	background-repeat: repeat;
+	*/
+}
+
+
+
+
+
+.contact_text{
+	/*background:#C00; */
+	color:#EEE; 
+	font-size:0.875em;
+	font-weight:bold;
+	line-height:1em;
+	padding:5px;
+	margin:2px;
+	text-shadow: 1px 1px #222;
+	text-transform: lowercase;
+	text-align:right;
+}
+
+.contact_text-red{
+	/*background:#C00; */
+	color: #FF6; 
+	font-size:12px;
+	font-weight:bold;
+	line-height:15px;
+	padding:5px;
+	margin:2px;
+	text-shadow: 1px 1px #222;
+	text-transform: lowercase;
+	text-align:right;
+}
+
+
+.page_name_header{
+	/*font-family: 'Fruktur', cursive;*/
+	font-size:24px; 
+	font-weight:bold; 
+	line-height:1.875em; 
+	color:#C00;
+}
+
+.boxshadow {
+    box-shadow: 0 2px 6px 2px #999999;
+}
+
+	
+	
+	/* CAROUSEL */
+	
+	
+			#wrapper {
+				/*background-color: #FFF;*/
+				border: 0px solid #ccc;
+				border-radius: 100px;
+				width: 700px;
+				height: 305px;
+				padding: 10px;
+				/*margin: -75px 0 0 -360px;
+				top: 200px;
+				left: 50%;*/
+				position: absolute;
+				margin:auto;
+				
+			}
+			.caroufredsel_wrapper {
+				border-radius: 90px;
+			}
+			#carousel img {
+				width: 500px;
+				height: 305px;
+				margin: 0 5px;
+				/*float: left;*/
+			}
+			
+			
+			
+			#prev, #next {
+				background: transparent url(../M4Scripts/coolcarousel58/img/carousel_control.png) no-repeat 0 0;
+				text-indent: -999px;
+				display: block;
+				overflow: hidden;
+				width: 15px;
+				height: 21px;
+				position: absolute;
+				top: 165px;
+			}
+			#prev {
+				background-position: 0 0;
+				left: 1.875em;
+			}
+			#prev:hover {
+				left: 29px;
+			}			
+			#next {
+				background-position: -18px 0;
+				right: 1.875em;
+			}
+			#next:hover {
+				right: 29px;
+			}				
+			#pager {
+				text-align: center;
+				margin: 0 auto;
+				padding-top: 20px;
+			}
+			#pager a {
+				background: transparent url(../M4Scripts/coolcarousel58/img/carousel_control.png) no-repeat -2px -32px;
+				text-decoration: none;
+				text-indent: -999px;
+				display: inline-block;
+				overflow: hidden;
+				width: 8px;
+				height: 8px;
+				margin: 0 5px 0 0;
+			}
+			#pager a.selected {
+				background: transparent url(../M4Scripts/coolcarousel58/img/carousel_control.png) no-repeat -12px -32px;
+				text-decoration: underline;				
+			}
+
+			#donate-spacer {
+				height: 100%;
+			}
+			#donate {
+				border-top: 1px solid #999;
+				width: 750px;
+				padding: 50px 75px;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+			#donate p, #donate form {
+				margin: 0;
+				float: left;
+			}
+			#donate p {
+				width: 650px;
+			}
+			#donate form {
+				width: 100px;
+			}
+			
+			
+
+.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+	
+	
+	/*PORTFOLIO  */
+	
+	
+
+.thumb {
+    position: relative;
+    width: 501;
+    border: 0px dashed #777;
+ /*    height: 527px;
+   margin: 10px;*/
+    float: left
+}
+
+
+.text {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+	height: 40px;
+    background: #C00;
+	opacity:0.8;
+    text-align: center;
+	margin: 0;
+	padding-top: 15px;
+	color:#FFF;
+	font-size:small;
+	font-weight:900;
+	vertical-align:middle;
+	
+}
+
+a.text:active{
+	color:#FFF;
+	font-size:x-small;
+}
+
+.thumb:hover .text {
+    display: inline-block
+}
+
+.video-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 1.875em;
+	height: 0;
+	overflow: hidden;
+}
+
+.video-container iframe,  
+.video-container object,  
+.video-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Tablet Landscape */
+@media screen and (max-width: 1060px) {
+    #mainBG { width:100%; }
+    #main { width:100%;} 
+	img { width: 80%; }
+
+
+.navbar {
+	  height: auto;
+	  margin-top: 1px;
+	  padding: 5px;
+	}
+	
+	#topnav {
+	  width: 100%;
+	  /*white-space:nowrap;*/
+	}
+	
+	#topnav li {
+	  display: inline;
+	  margin-right: 5px;
+	  padding: 5px;
+	}
+
+	a.topnav:link 
+	{
+		font-size: 0.8125em;
+		padding: 5px;
+		text-decoration: none;
+		font-weight:bold;
+		font-style:normal;
+		      color: #FC9; 
+		}/*unvisited link */
+		
+	a.topnav:visited 
+	{
+		font-size: 0.8125em;
+		padding: 5px;
+		text-decoration: none;
+		font-weight:bold;
+		font-style:normal;
+		color: #FC9;
+		}  /*visited link */
+	
+	a.topnav:hover 
+	{
+		color: #FFF;
+		font-size: 0.8125em; 
+		font-weight:bold; 
+		text-decoration:none;
+		background:#f20000;
+		border: 0px;
+		padding: 5px;
+		}  /* mouse over link */
+	
+	a.topnav:active {
+		color: #FFF;
+		font-size: 0.8125em;
+		padding: 5px;
+		text-decoration: none;
+		}  /* selected link */ 
+	
+	
+	.current {
+	  background: none repeat scroll 0 0 #F20000;
+	  color: #FFFFFF;
+	  font-size: 0.8125em;
+	  font-weight: bold;
+	  padding: 5px;
+	  text-decoration: none;
+	}
+
+	#logo2 {
+	margin: auto;
+	opacity: 0.9;
+	padding: 5px;
+	position: relative;
+	text-align: center;
+	top: 80px;
+	visibility: visible;
+	z-index: -1000;
+	width:206px;
+	left:0;
+	}
+	
+	
+#wrapper {
+  border: 0 solid #CCCCCC;
+  border-radius: 100px 100px 100px 100px;
+  height: auto;
+  margin: auto;
+  padding: 10px;
+  position: relative;
+  width: 700px;
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Tablet Portrait */
+@media screen and (max-width: 768px) {
+    #mainBG { width:100%; }
+    #main { width:100%; margin:0; border:none; }
+	img { width: 100%; }
+
+
+	.navbar {
+	  height: auto;
+	  margin-top: 1px;
+	  padding: 5px;
+	}
+	
+	#topnav {
+	  width: 100%;
+	  /*white-space:nowrap;*/
+	}
+	
+	#topnav li {
+	  display: inline;
+	  margin-right: 5px;
+	  padding: 5px;
+	}
+
+	a.topnav:link 
+	{
+		font-size: 0.8125em;
+		padding: 5px;
+		text-decoration: none;
+		font-weight:bold;
+		font-style:normal;
+		      color: #FC9; 
+		}/*unvisited link */
+		
+	a.topnav:visited 
+	{
+		font-size: 0.8125em;
+		padding: 5px;
+		text-decoration: none;
+		font-weight:bold;
+		font-style:normal;
+		color: #FC9;
+		}  /*visited link */
+	
+	a.topnav:hover 
+	{
+		color: #FFF;
+		font-size: 0.8125em; 
+		font-weight:bold; 
+		text-decoration:none;
+		background:#f20000;
+		border: 0px;
+		padding: 5px;
+		}  /* mouse over link */
+	
+	a.topnav:active {
+		color: #FFF;
+		font-size: 0.8125em;
+		padding: 5px;
+		text-decoration: none;
+		}  /* selected link */ 
+	
+	
+	.current {
+	  background: none repeat scroll 0 0 #F20000;
+	  color: #FFFFFF;
+	  font-size: 0.8125em;
+	  font-weight: bold;
+	  padding: 5px;
+	  text-decoration: none;
+	}
+
+	#logo2 {
+	margin: auto;
+	opacity: 0.9;
+	padding: 5px;
+	position: relative;
+	text-align: center;
+	top: 100px;
+	visibility: visible;
+	z-index: -1000;
+	width:206px;
+	left:0;
+	}
+	
+	
+	.splash{
+	min-height:65px;
+	height:auto;
+	padding: 15px;
+	width:75%;
+	margin: 5px auto;
+	opacity:0.95;
+	background-image: url();
+    background-color:
+	;
+	filter:alpha(opacity=95); /* For IE8 and earlier */
+	/*background-color:#c00;
+    background-attachment: fixed;
+	
+	background-repeat: repeat;*/
+}
+
+	
+	#slider1 {
+    width: 100%; /* important to be same as image width */
+    height: 75%; /* important to be same as image height */
+    position: relative; /* important */
+	overflow: visible; /* important */
+}
+
+#slider1Content {
+	width: 100%; /* important to be same as image width or wider */
+	position: absolute;
+	top: -2px;
+	margin-left: 0;
+	left: -3px;
+}
+.slider1Image {
+    float: left;
+    position: relative;
+	display: none;
+}
+.slider1Image span {
+    position: absolute;
+	font: 10px/15px Century Gothic;
+    padding: 5px 0px;
+    width: 100%;
+    background-color: #fff;
+    filter: alpha(opacity=75);
+    -moz-opacity: 0.75;
+	-khtml-opacity: 0.75;
+    opacity: 0.75;
+    color: #c00;
+    display: none;
+	text-shadow: 0px 0px;
+}
+
+.customerinfo {
+	display:none;
+}
+
+.introtextheader {
+  color: #F20000;
+  font-family: 'neoretrodrawregular';
+  font-size: 1.875em;
+  font-weight: 900;
+  text-align: left;
+}
+
+
+
+.m4tag {
+  color: #FFFFFF;
+  font-size: 0.875em;
+  height: 40px;
+  text-shadow: 1px 1px #000000;
+}
+
+}
+
+@media (min-width: 640px) { body {font-size:1rem;} } 
+@media (min-width:960px) { body {font-size:1.1rem;} } 
+@media (min-width:1100px) { body {font-size:1.25rem;} } 
