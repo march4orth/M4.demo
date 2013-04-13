@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../css/jquery.fancybox-1.3.0.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="../css/multimedia-portfolio.css" type="text/css" media="screen" />
 
-<!-- Scripts -->
+<!-- Scripts2 -->
 
 <script type="text/JavaScript">
 <!--
