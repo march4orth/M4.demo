@@ -372,7 +372,7 @@ MM_reloadPage(true);
       <!-- <img src="../M4Images/slideshow/D27.jpg"> -->
       <div class="displayinfo introtext rounded-corners">
 
-        <p>March 4orth Design is a design company offering affordable solutions from website and graphics design to event planning. </p>
+        <h3>March 4orth Design is a design company offering affordable solutions from website and graphics design to event planning. </h3>
 
 <p>
 We offer personalized creative services to small business owners and individuals that help
