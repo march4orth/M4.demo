@@ -343,7 +343,7 @@ MM_reloadPage(true);
       <div class="ez-last ez-oh">
         <div style="padding:10px;" class="ez-box">
         <span class="introtextheader">
-        THANK YOU! <br>
+        SUCCESS! <br>
         </span>
         
         <span class="introtext"><br>
@@ -372,7 +372,9 @@ MM_reloadPage(true);
       <div>
         
         <p><div>
-THANK YOU FOR CONTACTING US!
+THANK YOU FOR CONTACTING MARCH 4ORTH DESIGN!<br>
+YOUR FORM HAS BEEN SUBMITTED SUCCESSFULLY!<br>
+PLEASE ANTICIPATE A RESPONSE IN 48 HOURS OR LESS.
 </div>
 
 

@@ -389,7 +389,7 @@ MM_reloadPage(true);
                           <input type="hidden" name="recipient" value="march4orthdesign@gmail.com" />
                           <input type="hidden" name="F_to" value="march4orthdesign@gmail.com" />
                           <input type="hidden" name="F_subject" value="From MARCH 4ORTH DESIGN" />
-                          <input type="hidden" name="F_ok_url" value="http://march4orth.net/redesign/thankyou.asp" />
+                          <input type="hidden" name="F_ok_url" value="http://march4orth.net/thankyou.asp" />
 
                         
                   
